@@ -11,8 +11,8 @@ import (
 
 var (
 	logger      = log.New(os.Stdout, color.New(color.FgHiBlue).Sprintf("[Info]"), log.LstdFlags)
-	errorlogger = log.New(os.Stdout, color.New(color.FgHiRed).Sprintf("[Error]"), log.LstdFlags|log.Lshortfile)
-	debuglogger = log.New(os.Stdout, color.New(color.FgYellow).Sprintf("[Debug]"), log.LstdFlags|log.Lshortfile)
+	errorlogger = log.New(os.Stdout, color.New(color.FgRed).Sprintf("[Error]"), log.LstdFlags|log.Lshortfile)
+	debuglogger = log.New(os.Stdout, color.New(color.FgHiYellow).Sprintf("[Debug]"), log.LstdFlags|log.Lshortfile)
 )
 
 type LoggerSetter interface {
