@@ -28,7 +28,7 @@ func Set(f ConfigFunc) {
 }
 
 func Println(v ...interface{}) {
-	logger.Output(2, fmt.Sprint(v...))
+	logger.Output(2, fmt.Sprintln(v...))
 }
 
 func Printf(format string, v ...interface{}) {
