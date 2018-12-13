@@ -3,7 +3,6 @@ package log
 import (
 	"fmt"
 	"github.com/fatih/color"
-	"github.com/pkg/errors"
 	"io"
 	"log"
 	"os"
@@ -36,12 +35,7 @@ func Printf(format string, v ...interface{}) {
 }
 
 func Error(v ...interface{}) {
-	for i, e := range v {
-		if err, ok := e.(error); ok {
-			v[i] = fmt.Sprintf("%+v", errors.New(err.Error()))
-		}
-	}
-	errorlogger.Output(2, fmt.Sprint(fmt.Sprintln(v...)))
+	errorlogger.Output(2, fmt.Sprintln(v...))
 }
 
 func Errorf(format string, v ...interface{}) {
@@ -49,12 +43,7 @@ func Errorf(format string, v ...interface{}) {
 }
 
 func Debug(v ...interface{}) {
-	for i, e := range v {
-		if err, ok := e.(error); ok {
-			v[i] = fmt.Sprintf("%+v", err)
-		}
-	}
-	debuglogger.Output(2, fmt.Sprint(fmt.Sprintln(v...)))
+	debuglogger.Output(2, fmt.Sprintln(v...))
 }
 
 func Fatal(v ...interface{}) {
